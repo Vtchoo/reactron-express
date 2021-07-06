@@ -1,8 +1,11 @@
-# Reactron
+# Reactron-express
 
 ## What this project is
 
-Reactron is a simple template for generating standalone desktop applications running a React web app. This template is intended for my own personal use, but there's no restrictions on this, so anyone can clone/fork and use it.
+Built over the previous Reactron template, this version has an embedded express server instance, that can be started and stopped inside React
+
+## TODO:
+[ ] Configure babel to generate js file from es6 and Typescript files 
 
 ## How to build the application
 

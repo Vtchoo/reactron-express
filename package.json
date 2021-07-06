@@ -1,0 +1,93 @@
+{
+  "name": "reactron",
+  "version": "0.1.0",
+  "private": true,
+  "main": "public/electron.js",
+  "author": "Vtchoo",
+  "description": "teste de react + electron",
+  "homepage": "./",
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "concurrently": "^5.3.0",
+    "electron-is-dev": "^1.2.0",
+    "electron-squirrel-startup": "^1.0.0",
+    "express": "^4.17.1",
+    "object-assign": "^4.1.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.1",
+    "typescript": "^4.3.5",
+    "wait-on": "^5.2.0",
+    "web-vitals": "^0.2.4"
+  },
+  "scripts": {
+    "start": "npx react-scripts start",
+    "build": "npx react-scripts build",
+    "test": "npx react-scripts test",
+    "eject": "npx react-scripts eject",
+    "package": "npx react-scripts build && electron-forge package",
+    "make": "npx react-scripts build && electron-forge make",
+    "dev": "concurrently -k \"npm start\" \"npm:electron\"",
+    "electron": "wait-on tcp:3000 && electron ."
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.54",
+    "@electron-forge/maker-deb": "^6.0.0-beta.54",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.54",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.54",
+    "@electron-forge/maker-zip": "^6.0.0-beta.54",
+    "@types/express": "^4.17.12",
+    "@types/react": "^17.0.13",
+    "electron": "^11.4.9"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {
+        "asar": true
+      },
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "reactron"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  }
+}

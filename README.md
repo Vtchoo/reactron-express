@@ -2,7 +2,9 @@
 
 ## What this project is
 
-Built over the previous Reactron template, this version has an embedded express server instance, that can be started and stopped inside React
+Built over the previous Reactron template, this version has an embedded express server instance, that can be started and stopped inside React. The communication with the server instance is done via ipcMain/ipcRenderer channels (event-based method).
+
+Default port is 5000, but it can be changed to accept user input.
 
 ## TODO:
 [ ] Configure babel to generate js file from es6 and Typescript files 
